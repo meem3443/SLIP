@@ -27,6 +27,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.slip.MainActivity;
 import com.example.slip.R;
 import com.example.slip.ui.login.LoginViewModel;
 import com.example.slip.ui.login.LoginViewModelFactory;
@@ -163,6 +164,10 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                
+//                메인 화면 확인용 화면 전환 코드
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
             }
         });
     }

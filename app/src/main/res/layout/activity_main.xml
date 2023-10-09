@@ -4,4 +4,179 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/header_layout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/greeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="안녕하세요 👋🏻"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="정현제"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/black"
+        android:id="@+id/drop_down"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/drop_down_for_place"
+            android:inputType="none"
+            android:text="장소를 선택하세요." />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/state_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/rectangle_style"
+        app:layout_constraintTop_toBottomOf="@+id/drop_down"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="141dp">
+
+        <ImageView
+            android:id="@+id/state_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_safe" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="안전"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="위험 사항  |  0건 감지"
+            android:textSize="18sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/state_layout"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.widget.Button
+                android:id="@+id/contact_btn"
+                android:drawableTop="@drawable/ic_contact"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:text="연락처 변경" />
+
+            <android.widget.Button
+                android:id="@+id/statistics_btn"
+                android:drawableTop="@drawable/ic_statistics"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:text="사고 통계" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <android.widget.Button
+                android:id="@+id/managing_cctv_btn"
+                android:drawableTop="@drawable/ic_manage_cctv"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:text="cctv 관리" />
+
+            <android.widget.Button
+                android:id="@+id/check_cctv_btn"
+                android:drawableTop="@drawable/ic_check_cctv"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:text="cctv 확인" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
