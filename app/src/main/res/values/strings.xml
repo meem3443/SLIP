@@ -18,9 +18,9 @@
     <string name="password_confirm_k">비밀번호 확인</string>
     <string name="login_text_blue_k">로그인하기</string>
     <string-array name="select_place_region">
-        <item>거실</item>
-        <item>방1</item>
-        <item>방2</item>
-        <item>부엌</item>
+        <item>아빠집 거실</item>
+        <item>아빠집 안방</item>
+        <item>할머니집 거실</item>
+        <item>할머니집 부엌</item>
     </string-array>
 </resources>

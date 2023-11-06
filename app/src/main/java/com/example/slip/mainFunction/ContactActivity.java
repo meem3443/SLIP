@@ -11,20 +11,24 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.slip.R;
+import com.example.slip.databinding.ActivityContactBinding;
 
 public class ContactActivity extends AppCompatActivity {
+
+    private ActivityContactBinding binding;
     TextView name;
     TextView phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        binding = ActivityContactBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        name = findViewById(R.id.name);
-        phoneNumber = findViewById(R.id.phonenumber);
-        Button changeNumberBtn = findViewById(R.id.change_number_btn);
-        ImageButton addNewContact = findViewById(R.id.add_contact_btn);
+        name = binding.name;
+        phoneNumber = binding.phonenumber;
+        Button changeNumberBtn = binding.changeNumberBtn;
+        ImageButton addNewContact = binding.addContactBtn;
 
         changeNumberBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +54,7 @@ public class ContactActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 101) {
-            if (resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK && data != null) {
                 String modifiedName = data.getStringExtra("name");
                 String modifiedPhone = data.getStringExtra("phone");
                 name.setText(modifiedName);
