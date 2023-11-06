@@ -58,7 +58,7 @@
             android:fontFamily="@font/app_main_font"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    ㅁㄴㅇ<LinearLayout
+    <LinearLayout
         android:id="@+id/state_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
