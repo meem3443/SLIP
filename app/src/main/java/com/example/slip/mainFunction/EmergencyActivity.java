@@ -11,6 +11,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -31,7 +33,11 @@ public class EmergencyActivity extends AppCompatActivity {
         binding = ActivityEmergencyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final TextView place = binding.place;
+        String[] regionArray = getResources().getStringArray(R.array.select_place_region);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, regionArray);
+        final AutoCompleteTextView autoCompleteTextView = binding.dropDownForPlace;
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
         final VideoView monitor = binding.videoView;
         final Button confirmBtn = binding.confirmBtn;
         final Button fullScreenBtn = binding.fullscreenBtn;
@@ -42,7 +48,7 @@ public class EmergencyActivity extends AppCompatActivity {
         monitor.setVideoURI(uri);
 
         Intent intent = getIntent();
-        place.setText(intent.getStringExtra("place"));
+        autoCompleteTextView.setText(intent.getStringExtra("place"));
 
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override

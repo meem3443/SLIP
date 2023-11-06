@@ -7,18 +7,29 @@
     tools:context=".mainFunction.EmergencyActivity">
 
 
-    <TextView
-        android:id="@+id/place"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:boxBackgroundColor="#4FCFA8"
+        app:boxStrokeColor="@color/black"
+        android:id="@+id/drop_down"
         android:layout_marginTop="60dp"
-        android:textSize="32sp"
-        android:textAlignment="center"
-        android:fontFamily="@font/app_main_font"
-        android:text="거실" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/drop_down_for_place"
+            android:inputType="none"
+            android:textColor="@color/white"
+            android:text="아빠집 거실"
+            android:fontFamily="@font/app_main_font"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/state_layout"
@@ -32,7 +43,7 @@
         android:paddingBottom="10dp"
         android:paddingStart="15dp"
         android:background="@drawable/rectangle_style_deep"
-        app:layout_constraintTop_toBottomOf="@+id/place"
+        app:layout_constraintTop_toBottomOf="@+id/drop_down"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
