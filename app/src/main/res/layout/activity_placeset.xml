@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaceSetActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="153dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sliplogo" />
+
+    <ImageButton
+        android:id="@+id/Place_Plus"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/Place_setting"
+        app:layout_constraintEnd_toEndOf="@+id/Place_setting"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="@+id/Place_setting"
+        app:layout_constraintTop_toBottomOf="@+id/PlaceList"
+        app:srcCompat="@drawable/add" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:text="CCTV 추가"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Place_Plus"
+        app:layout_constraintStart_toEndOf="@+id/Place_Plus"
+        app:layout_constraintTop_toTopOf="@+id/Place_Plus" />
+
+    <ImageButton
+        android:id="@+id/Place_setting"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.277"
+        app:srcCompat="@drawable/gear" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="CCTV 관리"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Place_setting" />
+
+    <ScrollView
+        android:id="@+id/PlaceList"
+        android:layout_width="311dp"
+        android:layout_height="292dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#DBDAF7"
+        android:clipToPadding="false"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.573">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="31dp"
+        android:text="안녕하세요,"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="확인하실 장소를 선택하세요"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/PlaceList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.86" />
+
+    <TextView
+        android:id="@+id/User_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="00님 👋🏻"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/Hello"
+        app:layout_constraintTop_toTopOf="@+id/Hello"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/PlusButton"
+        android:layout_width="207dp"
+        android:layout_height="185dp"
+        app:layout_constraintTop_toTopOf="@id/PlaceList"
+        app:layout_constraintLeft_toLeftOf="@id/PlaceList"
+        app:layout_constraintRight_toRightOf="@id/PlaceList"
+        app:layout_constraintBottom_toBottomOf="@id/PlaceList"
+        android:alpha="0.2"
+        app:srcCompat="@drawable/addbutton"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="505dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
