@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaceMangementActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete_whole"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#cccccc"
+        android:textSize="15sp"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:text="전체 삭제"
+        app:layout_constraintBottom_toTopOf="@+id/delete_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_delete_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/select_delete_button"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#CCCCCC"
+        android:textSize="15sp"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:enabled="false"
+        android:text="선택 삭제"
+        app:layout_constraintBottom_toTopOf="@+id/delete_whole"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlaceView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete_confirm"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#CCCCCC"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:text="확인"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/delete_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete_whole" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete_cancel"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#CCCCCC"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:text="취소"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete_confirm" />
+
+    <ScrollView
+        android:id="@+id/PlaceView"
+        android:layout_width="373dp"
+        android:layout_height="386dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#DBDAF7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/delete_overview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="180dp"
+        android:text="등록된 장소 정보를 관리합니다."
+        android:fontFamily="@font/nanumsqaureneo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/PlaceView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/delete_place_count_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="등록된 장소"
+        android:fontFamily="@font/nanumsqaureneo"
+        android:backgroundTint="#DBDAF7"
+        app:layout_constraintBottom_toTopOf="@+id/PlaceView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/delete_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(0)"
+        app:layout_constraintBottom_toTopOf="@+id/PlaceView"
+        app:layout_constraintStart_toEndOf="@+id/delete_place_count_overview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
